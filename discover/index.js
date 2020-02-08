@@ -6,7 +6,7 @@ function walk(callback) {
   fs.readdir(config.startDirectory, function(err, files) {
     if (!err) {
       files.forEach(function (file) {
-        const filepath = path.join(config.baseDirectory, file);
+        const filepath = path.join(config.startDirectory, file);
         fs.stat(filepath, function(err, stats) {
           if (!err) {
             if (stats.isDirectory()) {
@@ -23,3 +23,5 @@ function walk(callback) {
     }
   });
 }
+
+module.exports = walk;

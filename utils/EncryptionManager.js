@@ -10,7 +10,7 @@ class EncryptionManager {
     this.cipher = null;
   }
 
-  static saveKey(keyValue, keyPath) {
+  saveKey(keyValue, keyPath) {
     fs.writeFileSync(keyPath, keyValue);
   }
 
