@@ -6,7 +6,7 @@ const { remoteServer } = require('../config');
 class Connection {
   constructor() {
     this.http = axios.create({
-      baseURL = remoteServer,
+      baseURL: remoteServer,
     });
   }
 

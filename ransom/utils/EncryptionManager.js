@@ -44,7 +44,8 @@ class EncryptionManager {
   }
 
   loadSymetricKey() {
-    const symetricKey, encSymetricKey;
+    let symetricKey = '';
+    let encSymetricKey = '';
 
     if (this.cipher) {
       encSymetricKey = fs.readFileSync(symetricKeyPath);

